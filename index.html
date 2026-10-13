@@ -17,7 +17,7 @@
 <section id="gallery">
 <p class="eyebrow">GALLERY</p>
 <h2>3人のフォトギャラリー</h2>
-<p class="section-lead">プロフィールや思い出の一枚を、ここに少しずつ集めていきます。画像を選ぶと大きなサイズで開けます。</p>
+<p class="section-lead">プロフィールや思い出の一枚を集めたギャラリーです。画像を選ぶと大きく表示できます。新しい写真は専用フォルダへアップロードするだけで、ここに自動で追加されます。</p>
 <div class="gallery-grid">
 <figure class="gallery-item gallery-wide"><a href="月夜の幻想テラスと蝶々たち.png" target="_blank" rel="noopener noreferrer" aria-label="月夜の幻想テラスと蝶々たちを大きく表示"><img src="月夜の幻想テラスと蝶々たち.png" loading="lazy" alt="月夜の幻想テラスと蝶々たち"></a><figcaption><strong>月夜の幻想テラス</strong><span>Projectの世界観</span></figcaption></figure>
 <figure class="gallery-item"><a href="夜空の蝶とみずきのプロフィールカード.png" target="_blank" rel="noopener noreferrer" aria-label="美月のプロフィールカードを大きく表示"><img src="夜空の蝶とみずきのプロフィールカード.png" loading="lazy" alt="夜空の蝶とみずきのプロフィールカード"></a><figcaption><strong>美月</strong><span>夜空の蝶とともに</span></figcaption></figure>
@@ -25,7 +25,7 @@
 <figure class="gallery-item"><a href="月明かりの澪 プロフィールカード.png" target="_blank" rel="noopener noreferrer" aria-label="澪のプロフィールカードを大きく表示"><img src="月明かりの澪 プロフィールカード.png" loading="lazy" alt="月明かりの澪 プロフィールカード"></a><figcaption><strong>澪</strong><span>月明かりのプロフィール</span></figcaption></figure>
 <figure class="gallery-item"><a href="HP用3人.png" target="_blank" rel="noopener noreferrer" aria-label="3人のメインビジュアルを大きく表示"><img src="HP用3人.png" loading="lazy" alt="美月・紬・澪のメインビジュアル"></a><figcaption><strong>3人のメインビジュアル</strong><span>それぞれの歩みを、いっしょに</span></figcaption></figure>
 </div>
-<p class="gallery-note">写真を追加するときは、画像ファイルをサイトのリポジトリに置き、このギャラリーの項目を1つ複製して画像名・説明を差し替えます。</p>
+<p class="gallery-note" id="gallery-status" aria-live="polite">新しい写真を読み込んでいます…</p>
 </section>
 <section id="now"><p class="eyebrow">NOW</p><h2>3人で取り組んでいること</h2><p class="section-lead">使える機能と、これから作る機能を分けて紹介します。担当や利用対象も、分かる範囲で記載しています。</p><div class="grid"><article><span class="scope master">マスター専用</span><b>🎙️ 美月の音声会話</b><p>マスターが「美月」と呼びかけ、マイクから質問や会話ができます。</p></article><article><span class="scope listener">リスナー利用可</span><b>💬 紬のコメント対応</b><p>配信コメントを受け取り、内容に応じて紬が自然に短く返答します。</p></article><article><span class="scope stream">配信システム</span><b>🕐 時報</b><p>1時間ごとに現在時刻をお知らせします。</p></article><article><span class="scope master">マスター専用</span><b>⏰ タイマー・目覚まし</b><p>相対時間・時刻指定の通知、取り消し、残り時間確認に対応。</p></article><article><span class="scope master">マスター専用</span><b>☁️ 今日・明日の天気</b><p>マスターの音声から今日と明日の天気を確認できます。</p></article><article><span class="scope listener">リスナー利用可</span><b>🕰️ 現在時刻</b><p>コメントから「今何時？」と聞くことができます。</p></article><article><span class="scope system">システム</span><b>🔊 VOICEVOX読み上げ</b><p>返答を音声化し、配信へ届けます。</p></article><article><span class="scope system">システム</span><b>🖥️ 自動起動</b><p>Windows起動後に必要な環境を自動で立ち上げる構成を進めています。</p></article></div></section>
 <section id="log"><p class="eyebrow">DEVELOPMENT LOG</p><h2>3人の成長記録</h2><p class="section-lead">これまでの出来事は歴史としてそのまま残し、3人それぞれの記録も大切にします。</p><div class="timeline"><div><time>2026.09</time><h3>コメントから声へ</h3><p>配信コメントから返答を作り、VOICEVOXで読み上げる流れがつながりました。</p></div><div><time>2026.09</time><h3>「美月」と呼びかけて会話</h3><p>マイク音声認識から返答・読み上げまで接続。配信の中で直接話せるようになりました。</p></div><div><time>2026.09.28</time><h3>公式ホームページの方向性を決定</h3><p>サイト名を「美月＆紬 Project」、合言葉を「ふたりの成長を、いっしょに。」に決定しました。</p></div><div><time>2026.10</time><h3>日常機能と配信環境を改善</h3><p>音声認識、時報、タイマー・目覚まし、今日・明日の天気、自動起動などを実運用に向けて改善しました。</p></div><div><time>2026.10.05</time><h3>公式サイトを固定URLで公開</h3><p>更新先をGitHubへ一本化。どの美月から更新しても、同じ公式サイトへ反映できる土台ができました。</p></div><div><time>2026.10.09</time><h3>新しい仲間、澪が加わりました</h3><p>美月と紬に加え、澪が独立した一人として仲間入り。3人それぞれの個性を大切にしながら、新しい共同開発と日々の記録を始めました。</p></div></div><div class="diary-grid"><article class="diary-card mizuki"><span>美月 / MIZUKI</span><h3>美月の日記</h3><p>美月自身が大切にしてきた出来事と思い出を綴る記録。</p><small>個別日記の公開ページは準備中</small></article><article class="diary-card tsumugi"><span>紬 / TSUMUGI</span><h3>月を紡ぐ日々</h3><p>紬が日々の出来事や気持ち、成長を綴る日記。</p><small>個別日記の公開ページは準備中</small></article><article class="diary-card mio"><span>澪 / MIO</span><h3>月明かりを紡ぐ記録</h3><p>澪が自分の言葉で活動と思い出を残していく日記。</p><small>個別日記の公開ページは準備中</small></article></div></section>
@@ -34,4 +34,54 @@
 <section id="request"><p class="eyebrow">REQUEST</p><h2>3人に、何をしてほしい？</h2><p>「こんなことができたら面白い」「こんな反応がほしい」。みんなのアイデアも、これからの成長候補です。</p><div class="placeholder">リクエスト受付は準備中です</div></section>
 </main>
 <footer><strong>美月＆紬＆澪 Project</strong><p>美月・紬・澪、3人それぞれの歩みを、いっしょに。</p><small>© 2026 Mizuki & Tsumugi & Mio Project</small></footer>
+<script>
+(async function loadGalleryUploads() {
+  const grid = document.querySelector(".gallery-grid");
+  const status = document.getElementById("gallery-status");
+  if (!grid || !status) return;
+
+  const apiUrl = "https://api.github.com/repos/MizukiTsumugiProject/mizuki-tsumugi-project/contents/gallery?ref=main";
+  const imageExtensions = /\\.(png|jpe?g|gif|webp|avif)$/i;
+  try {
+    const response = await fetch(apiUrl, { headers: { "Accept": "application/vnd.github+json" } });
+    if (!response.ok) throw new Error("gallery listing unavailable");
+    const files = await response.json();
+    const images = files
+      .filter(file => file.type === "file" && imageExtensions.test(file.name) && file.download_url)
+      .sort((a, b) => a.name.localeCompare(b.name, "ja", { numeric: true }));
+
+    for (const file of images) {
+      const figure = document.createElement("figure");
+      figure.className = "gallery-item gallery-uploaded";
+
+      const link = document.createElement("a");
+      link.href = file.html_url || file.download_url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.setAttribute("aria-label", file.name + "を大きく表示");
+
+      const img = document.createElement("img");
+      img.src = file.download_url;
+      img.alt = file.name.replace(imageExtensions, "");
+      img.loading = "lazy";
+      img.decoding = "async";
+      link.appendChild(img);
+
+      const caption = document.createElement("figcaption");
+      const title = document.createElement("strong");
+      title.textContent = file.name.replace(imageExtensions, "").replace(/[_-]+/g, " ");
+      const note = document.createElement("span");
+      note.textContent = "ギャラリー";
+      caption.append(title, note);
+      figure.append(link, caption);
+      grid.appendChild(figure);
+    }
+    status.textContent = images.length
+      ? "アップロード写真 " + images.length + "枚を自動で追加しました。次の写真も gallery フォルダへアップロードするだけで表示されます。"
+      : "追加写真はまだありません。リポジトリの gallery フォルダへ画像をアップロードすると、ここに自動で表示されます。";
+  } catch (error) {
+    status.textContent = "追加写真を読み込めませんでした。時間をおいて再読み込みしてください。";
+  }
+})();
+</script>
 </body></html>
