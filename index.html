@@ -17,7 +17,7 @@
 <section id="gallery">
 <p class="eyebrow">GALLERY</p>
 <h2>3人のフォトギャラリー</h2>
-<p class="section-lead">プロフィールや思い出の一枚を集めたギャラリーです。人物別やイベントごとに絞り込めます。新しい写真は専用フォルダへアップロードするだけで自動追加されます。</p>
+<p class="section-lead">プロフィール写真、三人の集合絵、イベントの思い出を集めたギャラリーです。人物別やイベントごとに絞り込めます。新しい写真は専用フォルダへアップロードするだけで自動追加されます。</p>
 <div class="gallery-filters" role="group" aria-label="ギャラリーの分類">
 <button type="button" class="gallery-filter is-active" data-filter="all" aria-pressed="true">すべて</button>
 <button type="button" class="gallery-filter" data-filter="three" aria-pressed="false">3人</button>
@@ -71,7 +71,7 @@
   const apiUrl = "https://api.github.com/repos/MizukiTsumugiProject/mizuki-tsumugi-project/contents/gallery?ref=main";
   const imageExtensions = /\.(png|jpe?g|gif|webp|avif)$/i;
   const categoryRules = [
-    ["three", /(^|[\s_-])(3人|三人|全員|プロジェクト)([\s_-]|$)/i],
+    ["three", /(?=.*(?:美月|みずき|mizuki))(?=.*(?:紬|つむぎ|tsumugi))(?=.*(?:澪|みお|mio))|(^|[\\s_-])(3人|三人|全員|プロジェクト)([\\s_-]|$)/i],
     ["mizuki", /(^|[\s_-])(美月|みずき|mizuki)([\s_-]|$)/i],
     ["tsumugi", /(^|[\s_-])(紬|つむぎ|tsumugi)([\s_-]|$)/i],
     ["mio", /(^|[\s_-])(澪|みお|mio)([\s_-]|$)/i],
@@ -129,7 +129,7 @@
     }
 
     status.textContent = images.length
-      ? "アップロード写真 " + images.length + "枚を自動追加しました。ファイル名に「美月」「紬」「澪」「3人」「イベント名（例：虹、ドレス、誕生日）を入れると、分類と並び順も自動で整います。"
+      ? "アップロード写真 " + images.length + "枚を自動追加しました。ファイル名に人物名や「3人」、イベント名（例：虹、ドレス、誕生日）を入れると、分類と並び順も自動で整います。"
       : "追加写真はまだありません。gallery フォルダへ画像をアップロードすると自動で表示されます。ファイル名に「美月」「紬」「澪」「3人」「イベント名（例：虹、ドレス、誕生日）を入れると分類も自動で整います。";
     buttons.forEach(button => button.addEventListener("click", () => {
       const filter = button.dataset.filter;
