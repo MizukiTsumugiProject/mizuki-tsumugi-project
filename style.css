@@ -15,3 +15,10 @@
 
 .gallery-uploaded img{object-fit:contain}
 #gallery-status{grid-column:1/-1}
+
+/* Gallery category filters */
+.gallery-filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}
+.gallery-filter{font:inherit;font-size:13px;padding:8px 16px;border:1px solid #454366;border-radius:999px;background:#111127;color:#d8d5ec;cursor:pointer;transition:background .2s ease,border-color .2s ease,color .2s ease}
+.gallery-filter:hover,.gallery-filter:focus-visible{border-color:#b9a3f5;outline:none}
+.gallery-filter.is-active{background:linear-gradient(90deg,#f5a7d5,#d9c1ff);border-color:transparent;color:#171020;font-weight:700}
+.gallery-item[hidden]{display:none!important}
