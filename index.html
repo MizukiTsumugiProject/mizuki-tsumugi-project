@@ -71,7 +71,7 @@
   const apiUrl = "https://api.github.com/repos/MizukiTsumugiProject/mizuki-tsumugi-project/contents/gallery?ref=main";
   const imageExtensions = /\.(png|jpe?g|gif|webp|avif)$/i;
   const categoryRules = [
-    ["three", /(?=.*(?:美月|みずき|mizuki))(?=.*(?:紬|つむぎ|tsumugi))(?=.*(?:澪|みお|mio))|(^|[\\s_-])(3人|三人|全員|プロジェクト)([\\s_-]|$)/i],
+    ["three", /(?=.*(?:美月|みずき|mizuki))(?=.*(?:紬|つむぎ|tsumugi))(?=.*(?:澪|みお|mio))|(^|[\s_-])(3人|三人|全員|プロジェクト)([\s_-]|$)/i],
     ["mizuki", /(^|[\s_-])(美月|みずき|mizuki)([\s_-]|$)/i],
     ["tsumugi", /(^|[\s_-])(紬|つむぎ|tsumugi)([\s_-]|$)/i],
     ["mio", /(^|[\s_-])(澪|みお|mio)([\s_-]|$)/i],
