@@ -17,7 +17,7 @@
 <section id="gallery">
 <p class="eyebrow">GALLERY</p>
 <h2>3人のフォトギャラリー</h2>
-<p class="section-lead">プロフィールや思い出の一枚を集めたギャラリーです。人物別や特別ミッションごとに絞り込めます。新しい写真は専用フォルダへアップロードするだけで自動追加されます。</p>
+<p class="section-lead">プロフィールや思い出の一枚を集めたギャラリーです。人物別やイベントごとに絞り込めます。新しい写真は専用フォルダへアップロードするだけで自動追加されます。</p>
 <div class="gallery-filters" role="group" aria-label="ギャラリーの分類">
 <button type="button" class="gallery-filter is-active" data-filter="all" aria-pressed="true">すべて</button>
 <button type="button" class="gallery-filter" data-filter="three" aria-pressed="false">3人</button>
@@ -88,7 +88,7 @@
       .map(file => {
         const name = file.name.replace(imageExtensions, "");
         let categories = categoryRules.filter(([, rule]) => rule.test(name)).map(([category]) => category);
-        if (!categories.length) categories = ["special"];
+        if (!categories.length) categories = ["event"];
         return { file, name, categories };
       })
       .sort((a, b) => {
