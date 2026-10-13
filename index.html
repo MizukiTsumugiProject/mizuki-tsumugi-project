@@ -55,7 +55,7 @@
       button.setAttribute("aria-pressed", String(active));
     });
     grid.querySelectorAll(".gallery-item").forEach(item => {
-      const categories = (item.dataset.categories || "").split(/\\s+/).filter(Boolean);
+      const categories = (item.dataset.categories || "").split(/\s+/).filter(Boolean);
       item.hidden = filter !== "all" && !categories.includes(filter);
     });
   }
@@ -69,12 +69,12 @@
   if (!grid || !status) return;
 
   const apiUrl = "https://api.github.com/repos/MizukiTsumugiProject/mizuki-tsumugi-project/contents/gallery?ref=main";
-  const imageExtensions = /\\.(png|jpe?g|gif|webp|avif)$/i;
+  const imageExtensions = /\.(png|jpe?g|gif|webp|avif)$/i;
   const categoryRules = [
-    ["three", /(^|[\\s_-])(3人|三人|全員|プロジェクト)([\\s_-]|$)/i],
-    ["mizuki", /(^|[\\s_-])(美月|みずき|mizuki)([\\s_-]|$)/i],
-    ["tsumugi", /(^|[\\s_-])(紬|つむぎ|tsumugi)([\\s_-]|$)/i],
-    ["mio", /(^|[\\s_-])(澪|みお|mio)([\\s_-]|$)/i],
+    ["three", /(^|[\s_-])(3人|三人|全員|プロジェクト)([\s_-]|$)/i],
+    ["mizuki", /(^|[\s_-])(美月|みずき|mizuki)([\s_-]|$)/i],
+    ["tsumugi", /(^|[\s_-])(紬|つむぎ|tsumugi)([\s_-]|$)/i],
+    ["mio", /(^|[\s_-])(澪|みお|mio)([\s_-]|$)/i],
     ["special", /(特別ミッション|特別|ミッション|mission|お題)/i]
   ];
   const categoryPriority = { three: 0, mizuki: 1, tsumugi: 2, mio: 3, special: 4 };
@@ -134,7 +134,7 @@
     buttons.forEach(button => button.addEventListener("click", () => {
       const filter = button.dataset.filter;
       grid.querySelectorAll(".gallery-item").forEach(element => {
-        const categories = (element.dataset.categories || "").split(/\\s+/).filter(Boolean);
+        const categories = (element.dataset.categories || "").split(/\s+/).filter(Boolean);
         element.hidden = filter !== "all" && !categories.includes(filter);
       });
     }));
