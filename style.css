@@ -12,3 +12,6 @@
 .gallery-item figcaption span,.gallery-note{font-size:12px;color:#aaa6bd}
 .gallery-note{margin-top:20px;line-height:1.8}
 @media(max-width:600px){.gallery-wide{grid-column:span 1}.gallery-item a,.gallery-wide a{height:260px}.gallery-grid{gap:14px}}
+
+.gallery-uploaded img{object-fit:contain}
+#gallery-status{grid-column:1/-1}
