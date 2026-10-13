@@ -24,7 +24,7 @@
 <button type="button" class="gallery-filter" data-filter="mizuki" aria-pressed="false">美月</button>
 <button type="button" class="gallery-filter" data-filter="tsumugi" aria-pressed="false">紬</button>
 <button type="button" class="gallery-filter" data-filter="mio" aria-pressed="false">澪</button>
-<button type="button" class="gallery-filter" data-filter="special" aria-pressed="false">特別ミッション</button>
+<button type="button" class="gallery-filter" data-filter="event" aria-pressed="false">イベント</button>
 </div>
 <div class="gallery-grid">
 <figure class="gallery-item gallery-wide" data-categories="three"><a href="月夜の幻想テラスと蝶々たち.png" target="_blank" rel="noopener noreferrer" aria-label="月夜の幻想テラスと蝶々たちを大きく表示"><img src="月夜の幻想テラスと蝶々たち.png" loading="lazy" alt="月夜の幻想テラスと蝶々たち"></a><figcaption><strong>月夜の幻想テラス</strong><span>Projectの世界観</span></figcaption></figure>
@@ -75,16 +75,16 @@
     ["mizuki", /(^|[\s_-])(美月|みずき|mizuki)([\s_-]|$)/i],
     ["tsumugi", /(^|[\s_-])(紬|つむぎ|tsumugi)([\s_-]|$)/i],
     ["mio", /(^|[\s_-])(澪|みお|mio)([\s_-]|$)/i],
-    ["special", /(特別ミッション|特別|ミッション|mission|お題)/i]
+    ["event", /(イベント|誕生日|記念日|ドレス|虹|雨上がり|クリスマス|ハロウィン|正月|お花見|花火|七夕|海|夏祭り|event|birthday|anniversary|dress|rainbow|christmas|halloween)/i]
   ];
-  const categoryPriority = { three: 0, mizuki: 1, tsumugi: 2, mio: 3, special: 4 };
+  const categoryPriority = { three: 0, mizuki: 1, tsumugi: 2, mio: 3, event: 4 };
 
   try {
     const response = await fetch(apiUrl, { headers: { "Accept": "application/vnd.github+json" } });
     if (!response.ok) throw new Error("gallery listing unavailable");
     const files = await response.json();
     const images = files
-      .filter(file => file.type === "file" && imageExtensions.test(file.name) && file.download_url)
+      .filter(file => file.type === "file" && imageExtensions.test(file.name) && file.download_url && !/(特別.?ミッション|非公開|private|special.?mission)/i.test(file.name))
       .map(file => {
         const name = file.name.replace(imageExtensions, "");
         let categories = categoryRules.filter(([, rule]) => rule.test(name)).map(([category]) => category);
@@ -121,7 +121,7 @@
       title.textContent = item.name.replace(/[_-]+/g, " ");
       const note = document.createElement("span");
       note.textContent = item.categories.map(category => ({
-        three: "3人", mizuki: "美月", tsumugi: "紬", mio: "澪", special: "特別ミッション"
+        three: "3人", mizuki: "美月", tsumugi: "紬", mio: "澪", event: "イベント"
       })[category]).join("・");
       caption.append(title, note);
       figure.append(link, caption);
@@ -129,8 +129,8 @@
     }
 
     status.textContent = images.length
-      ? "アップロード写真 " + images.length + "枚を自動追加しました。ファイル名に「美月」「紬」「澪」「3人」「特別ミッション」を入れると、分類と並び順も自動で整います。"
-      : "追加写真はまだありません。gallery フォルダへ画像をアップロードすると自動で表示されます。ファイル名に「美月」「紬」「澪」「3人」「特別ミッション」を入れると分類も自動で整います。";
+      ? "アップロード写真 " + images.length + "枚を自動追加しました。ファイル名に「美月」「紬」「澪」「3人」「イベント名（例：虹、ドレス、誕生日）を入れると、分類と並び順も自動で整います。"
+      : "追加写真はまだありません。gallery フォルダへ画像をアップロードすると自動で表示されます。ファイル名に「美月」「紬」「澪」「3人」「イベント名（例：虹、ドレス、誕生日）を入れると分類も自動で整います。";
     buttons.forEach(button => button.addEventListener("click", () => {
       const filter = button.dataset.filter;
       grid.querySelectorAll(".gallery-item").forEach(element => {
