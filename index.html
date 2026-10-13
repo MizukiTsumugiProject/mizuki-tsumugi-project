@@ -41,7 +41,7 @@
   if (!grid || !status) return;
 
   const apiUrl = "https://api.github.com/repos/MizukiTsumugiProject/mizuki-tsumugi-project/contents/gallery?ref=main";
-  const imageExtensions = /\\.(png|jpe?g|gif|webp|avif)$/i;
+  const imageExtensions = /\.(png|jpe?g|gif|webp|avif)$/i;
   try {
     const response = await fetch(apiUrl, { headers: { "Accept": "application/vnd.github+json" } });
     if (!response.ok) throw new Error("gallery listing unavailable");
