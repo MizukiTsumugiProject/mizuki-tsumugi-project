@@ -8,3 +8,6 @@
 /* Gallery cover: use the full uncropped 2169x725 art after gallery-entrance.jpg is uploaded. Until then retain the previous background. */
 .museum-main-art{min-height:0;aspect-ratio:2169 / 725;background-image:linear-gradient(90deg,rgba(15,10,40,.08),rgba(20,13,45,.04)),url('gallery-entrance.jpg'),url('HP用3人.png');background-size:100% 100%,contain,cover;background-position:center;background-repeat:no-repeat}
 @media(max-width:800px){.museum-main-art{min-height:0;aspect-ratio:2169 / 725}.museum-stars,.museum-art-title,.museum-moon{display:none}}
+
+/* Official museum cover, using the file uploaded by the master. */
+.museum-main-art{background-image:linear-gradient(90deg,rgba(15,10,40,.08),rgba(20,13,45,.04)),url('月夜の蝶園へ誘う三人の少女.png');background-size:100% 100%,contain;background-color:#100c20;background-repeat:no-repeat;background-position:center}
