@@ -4,3 +4,7 @@
 
 /* Distinguish the display image from the single large entrance below it. */
 .museum-main-entry{cursor:default}.museum-main-art{cursor:default}.museum-entry-content{display:block;cursor:pointer;transition:background .2s ease;min-height:178px}.museum-entry-content:hover,.museum-entry-content:focus-visible{background:linear-gradient(135deg,#39244d,#1b2d50);outline:3px solid #ffbfeb;outline-offset:-5px}.museum-enter{display:flex;width:max-content;max-width:100%;margin:0 auto;justify-content:center;font-size:16px}.museum-main-entry:hover{transform:none;box-shadow:0 14px 45px rgba(0,0,0,.3)}
+
+/* Gallery cover: use the full uncropped 2169x725 art after gallery-entrance.jpg is uploaded. Until then retain the previous background. */
+.museum-main-art{min-height:0;aspect-ratio:2169 / 725;background-image:linear-gradient(90deg,rgba(15,10,40,.08),rgba(20,13,45,.04)),url('gallery-entrance.jpg'),url('HP用3人.png');background-size:100% 100%,contain,cover;background-position:center;background-repeat:no-repeat}
+@media(max-width:800px){.museum-main-art{min-height:0;aspect-ratio:2169 / 725}.museum-stars,.museum-art-title,.museum-moon{display:none}}
